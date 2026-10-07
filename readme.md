@@ -1,0 +1,1 @@
+This repository documents my Python learning journey and contains practice exercises, notes and examples covering Python fundamentals and more advanced concepts.

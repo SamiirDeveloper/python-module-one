@@ -75,3 +75,86 @@ favorite_foods = {'tuna sandwich', 'rice & goat meat', 'outmeal', 'cheesy bean a
 favorite_foods.add('triple cheese burger')
 print('hamburger' in favorite_foods)
 print(favorite_foods)
+
+
+# Advanced Set Methods.
+# When working with two sets, Python provides several advanced methods to comppare and 
+# Analyze the relationship between them.
+
+# Subset and Superset Checks
+
+# issubset(): # Checks if all elements of one set are in another.
+# issuperset(): # Checks if one set contains all elements of another.
+
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+
+print(set1.issubset(set2)) # Output: True
+print(set2.issuperset(set1)) # OUtput: True 
+
+# Exercise 4: Comparing Sets
+# 1 Create two sets of your favorite sports or hobbies 
+# 2. Check if one set is a subset of the other.
+# 3. Check if one set is a superset of the other. 
+
+set3 = {'Basketball', 'Soccer', 'Football'}
+set4 = {'eating', 'sleeping', 'reading'}
+
+print(set3.issubset(set4))
+print(set4.issuperset(set3))
+
+# .union: combining two sets, no duplicates allowed.
+
+set3 = {'Basketball', 'Soccer', 'Football'}
+set4 = {'eating', 'sleeping', 'reading'}
+
+set3_plus_set4 = set3.union(set4)
+print(set3_plus_set4)
+
+# .intersection: Returns only the items both sets have in common
+
+set3 = {'Basketball', 'Soccer', 'Football', 'sleeping'}
+set4 = {'eating', 'sleeping', 'reading'}
+
+in_common = set3.intersection(set4)
+print(in_common)
+
+# .difference: Returns the items found in one set but not the other.
+set3 = {'Basketball', 'Soccer', 'Football'}
+set4 = {'eating', 'sleeping', 'reading'}
+
+exclusive_hobbies = set3.difference(set4)
+print(exclusive_hobbies)
+
+#.symetric_difference: Returns the items that are unique to each set (not shared by both)
+set3 = {'Basketball', 'Soccer', 'Football'}
+set4 = {'eating', 'sleeping', 'reading'}
+
+unique_hobbies = set3.symmetric_difference(set4)
+print(unique_hobbies) 
+
+# Final Challenge: Email List Deduplication.
+# You have two email lists, but some people maybe in both
+# Write a function to:
+# 1. Remove duplicates.
+# 2. Show which emails exist in both lists
+# 3. Show emails that are unique to each list.
+
+def clean_email_lists(list5, list6):
+    set5 = set(set5)
+    set6 = set(set6)
+    
+    # Remove duplicates and merge
+    all_unique_emails = set5.union(set6)
+    print("All unique emails: ", all_unique_emails)
+    
+    # Commons emails
+    common_emails = set5.intersection(set6)
+    print("Emails in both lists: ", common_emails)
+    
+    # Emails unique to each list
+    unique_emails = set5.symmetric_difference(set6)
+    print("Emails unique to each list: ", unique_emails)
+    
+    list5 = ['a@example.com', 'b@example.com', 'a@example.com']
+    list6 = ['b@example.com', 'c@example.com', 'd@example.com']
